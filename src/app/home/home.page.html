@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Libros y Mascotas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let book of books; let i = index">
+      <ion-card-header>
+        <ion-card-title>{{ book.title }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-img [src]="images[i]" alt="Imagen aleatoria"></ion-img>
+      </ion-card-content>
+
+      <ion-button (click)="saveToFirebase(book.title, images[i])">
+        Guardar en Firebase
+      </ion-button>
+    </ion-card>
+  </ion-list>
+</ion-content>

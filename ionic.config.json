@@ -1,0 +1,7 @@
+{
+  "name": "libroPerritoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

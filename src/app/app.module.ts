@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -17,12 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule, HttpClientModule
-
+    AppRoutingModule, 
+    HttpClientModule
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideFirebaseApp(() => initializeApp(environment.firebase)),
-
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],
   bootstrap: [AppComponent],
